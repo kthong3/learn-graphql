@@ -9,7 +9,7 @@ const app = express();
 // allow cross-origin requests
 app.use(cors());
 
-mongoose.connect('mongodb+srv://kathiee:a8ex6Tfq98D3EpA@gql-test.bqhse.mongodb.net/graphql?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://kathiee:a8ex6Tfq98D3EpA@gql-test.bqhse.mongodb.net/graphql?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.once('open', () => {
   console.log('connected to database')
 })
@@ -25,4 +25,3 @@ app.use(
 app.listen(4000, () => {
   console.log('now listening for requests on port 4000');
 });
-

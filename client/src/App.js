@@ -3,27 +3,13 @@ import BookList from './components/BookList';
 import { 
   ApolloClient, 
   InMemoryCache, 
-  ApolloProvider, 
-  gql } from '@apollo/client';
+  ApolloProvider } from '@apollo/client';
 
 // apollo client setup
 const client = new ApolloClient({
-  uri: 'https://localhost:4000/graphql',
+  uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache()
 });
-
-// client
-//   .query({
-//     query: gql`
-//       query GetBooks {
-//         books {
-//           name
-//           id
-//         }
-//       }
-//     `
-//   })
-//   .then(result => console.log(result));
 
 function App() {
   return (
