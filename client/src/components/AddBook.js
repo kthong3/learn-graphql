@@ -1,14 +1,7 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { GET_AUTHORS } from '../queries/queries';
 
-const GET_AUTHORS = gql`
-  query GetAuthors {
-    authors {
-      name
-      id
-    }
-  }
-`
 function AddBook(){
   const { loading, error, data } = useQuery(GET_AUTHORS);
   if (loading) return 'Loading...';
